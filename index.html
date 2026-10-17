@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>森林倖存者｜攻擊流派改良 v0.9</title>
+<title>森林倖存者｜技能名稱更新 v0.9.1</title>
 <style>
   :root { color-scheme: dark; }
   * { box-sizing: border-box; }
@@ -61,7 +61,7 @@
   <div class="modal" id="modal">
     <h1>森林倖存者</h1>
     <p>爽快生存 1 分鐘！經驗值大量掉落、快速連續升級，還有多種造型怪物與最終頭目！<br>電腦使用 WASD／方向鍵，手機使用左下角虛擬搖桿。</p>
-    <p style="font-size:13px;color:#d6e9c2">v0.9 火焰環刃、星辰衛星、雷電連鎖、穿透箭雨 · 可暫不升級</p>
+    <p style="font-size:13px;color:#d6e9c2">v0.9.1 技能名稱更新：閃身步、浪子踢球、狗熊哆嗦毛</p>
     <button id="startBtn">開始遊戲</button>
   </div>
 </div>
@@ -106,11 +106,11 @@
   const skillPool=[
     {name:'快速連射',desc:'攻擊速度提升 25%',apply:()=>stats.attackRate=Math.max(.22,stats.attackRate*.75)},
     {name:'強力彈丸',desc:'攻擊傷害提升 4 點',apply:()=>stats.damage+=4},
-    {name:'疾風步',desc:'移動速度提升 12%',apply:()=>player.speed*=1.12},
+    {name:'閃身步',desc:'移動速度提升 12%',apply:()=>player.speed*=1.12},
     {name:'生命提升',desc:'最大生命 +25，並恢復 25',apply:()=>{player.maxHp+=25;player.hp=Math.min(player.maxHp,player.hp+25)}},
-    {name:'經驗磁力',desc:'拾取經驗值的距離增加',apply:()=>player.magnet+=45},
+    {name:'狗熊哆嗦毛',desc:'拾取經驗值的距離增加',apply:()=>player.magnet+=45},
     {name:'多重彈丸',desc:'每次攻擊多發射一枚彈丸',apply:()=>stats.extraShots=Math.min(3,stats.extraShots+1)},
-    {name:'護身光環',desc:'碰到怪物時受到的傷害降低',apply:()=>player.armor=Math.min(8,player.armor+2)},
+    {name:'浪子踢球',desc:'碰到怪物時受到的傷害降低',apply:()=>player.armor=Math.min(8,player.armor+2)},
     {name:'🔥 火焰魔法',desc:'火焰屬性升級：火球更多、更大，逐步進化成烈焰風暴',mode:'fire',apply:()=>upgradeAttack('fire')},
     {name:'⚡ 雷電魔法',desc:'雷電屬性升級：連鎖目標增加，進化成雷霆風暴',mode:'lightning',apply:()=>upgradeAttack('lightning')},
     {name:'✦ 星爆魔法',desc:'星爆屬性升級：彈幕加倍，進化成多重星環',mode:'nova',apply:()=>upgradeAttack('nova')},
